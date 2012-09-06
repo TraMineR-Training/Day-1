@@ -1,0 +1,55 @@
+Assignment 1 - Starting with R and TraMineR
+===========================================
+**Start R and load the TraMineR library**
+
+```{r library, message=FALSE}
+# Load the TraMineR library
+library(TraMineR)
+```
+
+**Look at the help page of the biofam data provided by TraMineR which you access by typing help(biofam) or ?biofam**
+Find out which are the columns containing the sequence data
+
+```{r data, message=FALSE}
+# Get help for biofam data set
+help(biofam)
+# Load the biofam data
+data(biofam)
+```
+
+**Look at the first six rows of the data frame (head(biofam))**
+
+```{r header}
+# biofam data header
+head(biofam)
+```
+
+
+**Create the state sequence object**
+
+```{r seqobj, message=FALSE}
+# Create labels for biofam alphabet
+biofam.lab <- c("Parent","Left","Married","Left+Marr","Child","Left+Child","Left+Marr+Child","Divorced")
+# Create biofam state sequence object
+biofam.seq<-seqdef(biofam,10:25,states=biofam.lab)
+```
+
+**plot the sequences using, seqIplot, seqfplot and seqdplot. Comment the plots**
+
+```{r plots}
+# Generate sequence index plot
+seqIplot(biofam.seq,title="Index plot (whole biofam dataset)",sortv="from.start")
+# Generate sequence frequency plot
+seqfplot(biofam.seq,title="Frequency plot (10 most frequent sequences)")
+# Generate state distribution plot
+seqdplot(biofam.seq,title="State distribution plot",border=NA)
+```
+
+**Display (print) the first 10 sequences in extended and compact form**
+
+```{r print,}
+# First 10 sequences in extended form
+print(biofam.seq[1:10,],ext=T)
+# First 10 sequences in compact form
+print(biofam.seq[1:10,],format="SPS")
+```

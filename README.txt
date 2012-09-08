@@ -27,7 +27,7 @@ Employed+neutral change (same salary than before) =ENU
 Employed+negative change (lower salary than before)=EE
 
 * Size of the alphabet= 6 states
-* Number of sequences: 2253 individuals (1140 man; 1123 women)
+* Number of sequences: 2253 individuals (1140 men; 1123 women)
 *  Maximum and minimum sequence lengths: 240 months for each individual 
 
 C.The kind of knowledge you expect to extract from your sequences
